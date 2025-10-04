@@ -22,39 +22,63 @@
     <a href="#">Liên hệ</a>
   </nav>
 
-  <!-- Nội dung -->
-  <div class="container">
-    <h2>Giới thiệu</h2>
-    <p>Danh hiệu <strong>Sinh viên 5 tốt</strong> là phần thưởng cao quý của Hội Sinh viên Việt Nam,
-    ghi nhận những bạn trẻ rèn luyện toàn diện ở 5 tiêu chí: Đạo đức, Học tập, Thể lực,
-    Tình nguyện và Hội nhập.</p>
+  <!-- Banner -->
+  <div class="banner">
+    <img src="images/banner.jpg" alt="Ảnh bìa Sinh viên 5 tốt">
+  </div>
 
-    <h2>5 tiêu chí Sinh viên 5 tốt</h2>
-    <div class="card">
-      <h3>🌟 Đạo đức tốt</h3>
-      <p>Sống lành mạnh, tuân thủ pháp luật, có tinh thần trách nhiệm và nhân ái.</p>
-    </div>
-    <div class="card">
-      <h3>📚 Học tập tốt</h3>
-      <p>Đạt kết quả học tập khá, giỏi; có tinh thần nghiên cứu và sáng tạo.</p>
-    </div>
-    <div class="card">
-      <h3>💪 Thể lực tốt</h3>
-      <p>Rèn luyện sức khỏe, tham gia thể dục thể thao thường xuyên.</p>
-    </div>
-    <div class="card">
-      <h3>🤝 Tình nguyện tốt</h3>
-      <p>Tham gia hoạt động cộng đồng, tình nguyện vì xã hội.</p>
-    </div>
-    <div class="card">
-      <h3>🌍 Hội nhập tốt</h3>
-      <p>Có khả năng ngoại ngữ, kỹ năng hội nhập quốc tế, sử dụng CNTT hiệu quả.</p>
-    </div>
+  <!-- Nội dung chính -->
+  <div class="container">
+    <h2>🌟 Giới thiệu Danh hiệu Sinh viên 5 tốt</h2>
+    <p>
+      Danh hiệu <strong>"Sinh viên 5 tốt"</strong> là một danh hiệu cao quý do Trung ương Hội Sinh viên Việt Nam phát động,
+      nhằm tôn vinh sự nỗ lực của sinh viên qua 5 tiêu chí: <b>Học tập tốt – Đạo đức tốt – Thể lực tốt – 
+      Tình nguyện tốt – Hội nhập tốt</b>. Phong trào này khuyến khích sinh viên phát triển toàn diện,
+      rèn luyện các kỹ năng cần thiết cho tương lai.
+    </p>
+
+    <h2>👤 Đối tượng tham gia đăng ký xét cấp Trường</h2>
+    <ul>
+      <li>Sinh viên từ khoá K21 đến khoá K24, hiện đang theo học tại Trường Đại học Ngoại ngữ, ĐHĐN.</li>
+      <li>Đáp ứng tiêu chuẩn SV5T: Học tập tốt, Đạo đức tốt, Thể lực tốt, Tình nguyện tốt, Hội nhập tốt.</li>
+    </ul>
+
+    <h2>⏳ Thời gian nhận hồ sơ</h2>
+    <ul>
+      <li>Đăng ký online: <b>03/9/2025 – 09/9/2025</b></li>
+      <li>Hạn cuối nộp báo cáo thành tích bản cứng: <b>12/9/2025</b></li>
+    </ul>
+
+    <h2>📌 Lưu ý khi nộp hồ sơ</h2>
+    <p>
+      - Hồ sơ online: File minh chứng phải là bản scan gốc, BCTT nộp đủ định dạng Word và PDF.<br>
+      - Hồ sơ bản cứng: Nộp bản in BCTT đã ký tên.
+    </p>
+
+    <h2>🌟 Quy trình đăng ký xét chọn</h2>
+    <ol>
+      <li>Điền form đăng ký online.</li>
+      <li>Hoàn thiện & đăng tải hồ sơ bản mềm.</li>
+      <li>Theo dõi phản hồi từ ĐTN – HSV, nộp báo cáo thành tích bản cứng.</li>
+      <li>Bổ sung/chỉnh sửa hồ sơ sau phản hồi (nếu có).</li>
+      <li>HSV Nhà trường xét chọn và công bố kết quả.</li>
+    </ol>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 CLB Sinh viên 5 tốt - Đoàn Thanh niên & Hội Sinh viên</p>
+    <p>© 2025 CLB Sinh viên 5 tốt - Đoàn Thanh niên & Hội Sinh viên Trường ĐHNN, ĐHĐN</p>
   </footer>
+
+  <!-- Chatbot AI -->
+  <div class="chatbot">
+    <div class="chatbot-header" onclick="toggleChat()">💬 Tư vấn SV5T</div>
+    <div class="chatbot-body" id="chatbotBody">
+      <div class="chatbot-messages" id="messages"></div>
+      <input type="text" id="userInput" placeholder="Nhập câu hỏi..." onkeypress="handleKey(event)">
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
