@@ -1,3 +1,4 @@
+/* --- layout chung --- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,10 +11,6 @@ header {
   color: white;
   text-align: center;
   padding: 20px;
-}
-
-header h1 {
-  margin: 0;
 }
 
 nav {
@@ -33,22 +30,22 @@ nav a:hover {
   background: #004c99;
 }
 
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
 .container {
   max-width: 1000px;
   margin: 20px auto;
   padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 h2 {
   color: #0056b3;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  margin: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 footer {
@@ -57,4 +54,44 @@ footer {
   text-align: center;
   padding: 10px;
   margin-top: 20px;
+}
+
+/* --- chatbot --- */
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 280px;
+  font-size: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.chatbot-header {
+  background: #0056b3;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.chatbot-body {
+  display: none;
+  flex-direction: column;
+  background: white;
+  height: 350px;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+#userInput {
+  border: none;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  width: 100%;
 }
