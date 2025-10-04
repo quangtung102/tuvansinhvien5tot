@@ -82,3 +82,75 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Tư vấn Sinh viên 5 tốt</title>
+  <style>
+    body { font-family: Arial; margin:0; background:#f4f6f9; }
+    header { background:#0056b3; color:#fff; text-align:center; padding:20px; }
+    nav { background:#003d80; display:flex; justify-content:center; }
+    nav a { color:white; text-decoration:none; padding:15px 20px; }
+    nav a:hover { background:#004c99; }
+    .container { max-width:1000px; margin:20px auto; padding:20px; background:white; border-radius:8px; }
+    footer { background:#003d80; color:white; text-align:center; padding:10px; margin-top:20px; }
+    /* Chatbot */
+    .chatbot { position:fixed; bottom:20px; right:20px; width:280px; font-size:14px; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.3);}
+    .chatbot-header { background:#0056b3; color:white; padding:10px; cursor:pointer; text-align:center; }
+    .chatbot-body { display:none; flex-direction:column; background:white; height:350px;}
+    .chatbot-messages { flex:1; padding:10px; overflow-y:auto; font-size:13px; }
+    #userInput { border:none; border-top:1px solid #ddd; padding:10px; width:100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Website Tư vấn Sinh viên 5 tốt</h1>
+  </header>
+  <nav>
+    <a href="#">Trang chủ</a>
+    <a href="#">Bộ tiêu chí</a>
+    <a href="#">Đăng ký</a>
+  </nav>
+  <div class="container">
+    <h2>Giới thiệu</h2>
+    <p>Danh hiệu <b>Sinh viên 5 tốt</b> là danh hiệu cao quý do Trung ương Hội Sinh viên Việt Nam phát động...</p>
+  </div>
+  <footer>© 2025 CLB Sinh viên 5 tốt</footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot">
+    <div class="chatbot-header" onclick="toggleChat()">💬 Tư vấn SV5T</div>
+    <div class="chatbot-body" id="chatbotBody">
+      <div class="chatbot-messages" id="messages"></div>
+      <input type="text" id="userInput" placeholder="Nhập câu hỏi..." onkeypress="handleKey(event)">
+    </div>
+  </div>
+
+  <script>
+    function toggleChat() {
+      const body = document.getElementById("chatbotBody");
+      body.style.display = body.style.display === "flex" ? "none" : "flex";
+    }
+    function handleKey(event) {
+      if (event.key === "Enter") sendMessage();
+    }
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const msg = input.value.trim();
+      if (!msg) return;
+      const messages = document.getElementById("messages");
+      const userMsg = document.createElement("div");
+      userMsg.textContent = "👤: " + msg;
+      messages.appendChild(userMsg);
+      const botMsg = document.createElement("div");
+      botMsg.textContent = "🤖: Cảm ơn bạn! Về '" + msg + "', vui lòng liên hệ ĐTN-HSV để biết thêm chi tiết.";
+      messages.appendChild(botMsg);
+      input.value = "";
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>
+</body>
+</html>
