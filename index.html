@@ -14,12 +14,13 @@
   </header>
 
   <!-- Navigation -->
-  <nav>
-    <a href="#">Trang chủ</a>
-    <a href="#">Bộ tiêu chí</a>
-    <a href="#">Tự đánh giá</a>
-    <a href="#">Gương SV5T</a>
-    <a href="#">Liên hệ</a>
+<nav>
+  <a href="#">Trang chủ</a>
+  <a href="#" id="criteriaBtn">Bộ tiêu chí</a>
+  <a href="#">Tự đánh giá</a>
+  <a href="#">Gương SV5T</a>
+  <a href="#">Liên hệ</a>
+</nav>
   </nav>
 
   <!-- Banner -->
@@ -155,62 +156,64 @@
 </body>
 </html>
 
-<!-- Bộ tiêu chí -->
-<section class="criteria">
-  <h2>📌 Bộ tiêu chí Sinh viên 5 tốt - Cấp Trường ĐHNN, ĐHĐN</h2>
-  <div class="criteria-grid">
+<!-- Modal: Bộ tiêu chí -->
+<div id="criteriaModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="criteriaTitle">
+  <div class="modal-content" role="document">
+    <button class="modal-close" id="closeCriteria" aria-label="Đóng">&times;</button>
+    <h2 id="criteriaTitle">📌 Bộ tiêu chí Sinh viên 5 tốt - Cấp Trường ĐHNN, ĐHĐN</h2>
 
-    <!-- Đạo đức -->
-    <div class="criteria-card">
-      <h3>Đạo đức tốt</h3>
-      <ul>
-        <li>Không vi phạm pháp luật và các quy chế, nội quy của nhà trường, quy định của địa phương và cộng đồng.</li>
-        <li>Đạt thêm 01 trong các tiêu chí sau:
-          <ul>
-            <li>Điểm rèn luyện TB HKI 2023-2024 ≥ 85/100.</li>
-            <li>Điểm rèn luyện TB HKI 2023-2024 ≥ 80/100 và có minh chứng tham gia ít nhất 01 hoạt động chính trị - tư tưởng.</li>
-          </ul>
-        </li>
-      </ul>
+    <div class="criteria-grid">
+      <!-- Đạo đức -->
+      <div class="criteria-card">
+        <h3>Đạo đức tốt</h3>
+        <ul>
+          <li>Không vi phạm pháp luật và các quy chế, nội quy của nhà trường, quy định của địa phương và cộng đồng.</li>
+          <li>Đạt thêm 01 trong các tiêu chí sau:
+            <ul>
+              <li>Điểm rèn luyện TB HKI 2023-2024 ≥ 85/100.</li>
+              <li>Điểm rèn luyện TB HKI 2023-2024 ≥ 80/100 và có minh chứng tham gia ≥1 hoạt động chính trị - tư tưởng.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Học tập -->
+      <div class="criteria-card">
+        <h3>Học tập tốt</h3>
+        <p>Điểm trung bình học tập năm học 2023-2024 đạt từ <strong>3.2/4.0</strong> trở lên.</p>
+      </div>
+
+      <!-- Thể lực -->
+      <div class="criteria-card">
+        <h3>Thể lực tốt</h3>
+        <ul>
+          <li>Điểm trung bình môn Thể dục 2023-2024 đạt loại khá trở lên.</li>
+          <li>Tham gia & có chứng nhận tại hoạt động thể thao cấp CLB/LCĐ/LCĐH trở lên.</li>
+          <li>Thành viên đội tuyển hoặc tham gia thi đấu cấp Trường trở lên.</li>
+          <li>Rèn luyện định kỳ tại CLB/Đội/Nhóm thể thao trong Trường.</li>
+          <li>Chứng nhận teambuilding do CLB/Đoàn–HSV tổ chức.</li>
+        </ul>
+      </div>
+
+      <!-- Tình nguyện -->
+      <div class="criteria-card">
+        <h3>Tình nguyện tốt</h3>
+        <ul>
+          <li>Chứng nhận hoàn thành Chiến dịch tình nguyện Hè hoặc Đông–Xuân.</li>
+          <li>Chứng nhận tham gia hoạt động tình nguyện tại chỗ do CLB/LCĐ/LCĐH hoặc đơn vị ngoài trường.</li>
+          <li>Giấy khen cấp Trường hoặc Đoàn Trường trở lên về hoạt động tình nguyện.</li>
+        </ul>
+      </div>
+
+      <!-- Hội nhập -->
+      <div class="criteria-card">
+        <h3>Hội nhập tốt</h3>
+        <ul>
+          <li>Tham gia ≥1 hoạt động hội nhập giao lưu quốc tế hoặc hội thảo cấp quốc gia/quốc tế.</li>
+          <li>Chứng chỉ ngoại ngữ: A2 (ngành chuyên ngữ) hoặc B1 tiếng Anh (ngành không chuyên ngữ) — hoặc tương đương theo Thông tư 05/2012/TT-BGDĐT.</li>
+          <li>Đạt giải cuộc thi ngoại ngữ cấp LCĐ/LCĐH/Khoa/CLB trở lên.</li>
+        </ul>
+      </div>
     </div>
-
-    <!-- Học tập -->
-    <div class="criteria-card">
-      <h3>Học tập tốt</h3>
-      <p>Điểm trung bình học tập năm học 2023-2024 đạt từ <b>3.2/4.0</b> trở lên.</p>
-    </div>
-
-    <!-- Thể lực -->
-    <div class="criteria-card">
-      <h3>Thể lực tốt</h3>
-      <ul>
-        <li>Điểm trung bình môn Thể dục năm học 2023-2024 đạt loại khá trở lên.</li>
-        <li>Tham gia và có chứng nhận tại các phong trào/hoạt động thể thao từ cấp CLB trở lên.</li>
-        <li>Là thành viên đội tuyển hoặc cá nhân tham gia thi đấu thể thao cấp Trường trở lên.</li>
-        <li>Tham gia rèn luyện thể thao định kỳ tại CLB/Đội/Nhóm trong Trường.</li>
-        <li>Có chứng nhận tham gia chương trình teambuilding do CLB/Đoàn – HSV Nhà trường tổ chức.</li>
-      </ul>
-    </div>
-
-    <!-- Tình nguyện -->
-    <div class="criteria-card">
-      <h3>Tình nguyện tốt</h3>
-      <ul>
-        <li>Có chứng nhận hoàn thành Chiến dịch tình nguyện Hè hoặc Đông – Xuân.</li>
-        <li>Có giấy chứng nhận tham gia hoạt động tình nguyện tại chỗ (CLB, Liên Chi hội, Liên Chi đoàn…).</li>
-        <li>Được giấy khen cấp Trường hoặc Đoàn Trường trở lên về hoạt động tình nguyện.</li>
-      </ul>
-    </div>
-
-    <!-- Hội nhập -->
-    <div class="criteria-card">
-      <h3>Hội nhập tốt</h3>
-      <ul>
-        <li>Tham gia ít nhất 01 hoạt động hội nhập giao lưu quốc tế, hội thảo quốc gia/quốc tế.</li>
-        <li>Đạt chứng chỉ ngoại ngữ 2 trình độ A2 (ngành chuyên ngữ) hoặc B1 tiếng Anh (ngành không chuyên ngữ), hoặc chứng chỉ tương đương theo Thông tư 05/2012/TT-BGDĐT.</li>
-        <li>Đạt giải trong các cuộc thi ngoại ngữ từ cấp Liên Chi Đoàn, Liên Chi Hội, Khoa, CLB trở lên.</li>
-      </ul>
-    </div>
-
   </div>
-</section>
+</div>
