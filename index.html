@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tư vấn Sinh viên 5 tốt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #0056b3;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    /* Chatbot */
+    .chatbox {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      height: 420px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      background: white;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: #0056b3;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .chat-input button {
+      background: #0056b3;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin: 5px 0;
+      padding: 8px 10px;
+      border-radius: 5px;
+      max-width: 80%;
+      clear: both;
+    }
+
+    .user {
+      background: #e1f0ff;
+      float: right;
+    }
+
+    .bot {
+      background: #f0f0f0;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tư vấn Danh hiệu Sinh viên 5 tốt</h1>
+    <p>Hãy đặt câu hỏi để được hỗ trợ!</p>
+  </header>
+
+  <div class="chatbox">
+    <div class="chat-header">Trợ lý SV5T</div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Nhập câu hỏi...">
+      <button onclick="sendMessage()">Gửi</button>
+    </div>
+  </div>
+
+  <script>
+    const messages = document.getElementById("chatMessages");
+
+    function addMessage(text, sender) {
+      const msg = document.createElement("div");
+      msg.classList.add("message", sender);
+      msg.textContent = text;
+      messages.appendChild(msg);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const text = input.value.trim();
+      if (text === "") return;
+      addMessage(text, "user");
+      input.value = "";
+      setTimeout(() => {
+        botReply(text);
+      }, 500);
+    }
+
+    function botReply(question) {
+      let reply = "Xin lỗi, mình chưa hiểu câu hỏi của bạn. Hãy hỏi về Sinh viên 5 tốt nhé!";
+
+      if (question.includes("tiêu chuẩn") || question.includes("điều kiện")) {
+        reply = "Sinh viên 5 tốt cần đạt 5 tiêu chí: Đạo đức tốt, Học tập tốt, Thể lực tốt, Tình nguyện tốt, Hội nhập tốt.";
+      } 
+      else if (question.includes("cấp trường") || question.includes("UFLS")) {
+        reply = "Cấp Trường (UFLS): Nộp hồ sơ tại trường, được Hội đồng SV5T của trường xét chọn.";
+      }
+      else if (question.includes("cấp đại học") || question.includes("ĐHĐN")) {
+        reply = "Cấp ĐHĐN: Sinh viên đạt cấp Trường sẽ được giới thiệu lên Đại học Đà Nẵng để xét chọn.";
+      }
+      else if (question.includes("cấp thành phố")) {
+        reply = "Cấp Thành phố Đà Nẵng: Do Thành Đoàn xét chọn từ những sinh viên tiêu biểu cấp ĐHĐN.";
+      }
+      else if (question.includes("cấp trung ương")) {
+        reply = "Cấp Trung ương: Đây là danh hiệu cao nhất, do Trung ương Hội Sinh viên Việt Nam trao tặng.";
+      }
+      else if (question.includes("lợi ích") || question.includes("ý nghĩa")) {
+        reply = "Danh hiệu Sinh viên 5 tốt giúp khẳng định thành tích toàn diện, là lợi thế lớn khi xin học bổng, việc làm và ghi điểm trong hồ sơ cá nhân.";
+      }
+
+      addMessage(reply, "bot");
+    }
+  </script>
+</body>
+</html>
