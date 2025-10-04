@@ -142,3 +142,131 @@
     </div>
   </div>
 </section>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Tư vấn Sinh viên 5 tốt</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; background:#f4f9fa;}
+    header {background:#00bcd4; padding:20px; color:#fff; text-align:center;}
+    nav {background:#0097a7; display:flex; justify-content:center;}
+    nav a {color:#fff; text-decoration:none; padding:12px 16px; font-weight:600;}
+    nav a:hover {background:#007c91;}
+    .container {max-width:900px; margin:20px auto; background:#fff; padding:20px; border-radius:8px;}
+    h2 {color:#0097a7;}
+    /* Chatbot */
+    .chatbot-box {border:1px solid #ccc; border-radius:8px; display:flex; flex-direction:column; height:400px;}
+    .chat-window {flex:1; padding:10px; overflow-y:auto; background:#f9f9f9;}
+    .chat-input {display:flex; border-top:1px solid #ccc;}
+    .chat-input input {flex:1; border:none; padding:10px;}
+    .chat-input button {background:#00bcd4; border:none; color:#fff; padding:10px 14px; font-weight:bold; cursor:pointer;}
+    .chat-msg {margin:6px 0;}
+    .chat-user {color:#003d80; font-weight:600;}
+    .chat-bot {color:#00695c;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Website Tư vấn Sinh viên 5 tốt</h1>
+</header>
+
+<nav>
+  <a href="#" onclick="showSection('criteria')">Bộ tiêu chí</a>
+  <a href="#" onclick="showSection('consult')">Tư vấn</a>
+</nav>
+
+<main>
+  <!-- Bộ tiêu chí -->
+  <section id="criteria" class="container" style="display:none;">
+    <h2>📌 Bộ tiêu chí Sinh viên 5 tốt</h2>
+    <button onclick="loadCriteria()">Cấp Trường ĐH Ngoại ngữ, ĐHĐN</button>
+    <div id="criteriaContent" style="margin-top:15px;"></div>
+  </section>
+
+  <!-- Tư vấn -->
+  <section id="consult" class="container" style="display:none;">
+    <h2>💬 Tư vấn Sinh viên 5 tốt</h2>
+    <div class="chatbot-box">
+      <div id="chatWindow" class="chat-window"></div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Nhập câu hỏi...">
+        <button onclick="sendMsg()">Gửi</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => sec.style.display="none");
+  document.getElementById(id).style.display="block";
+}
+
+/* --- Bộ tiêu chí --- */
+function loadCriteria(){
+  document.getElementById("criteriaContent").innerHTML = `
+    <h3>Đạo đức</h3>
+    <p>- Không vi phạm pháp luật, nội quy.<br>
+    - Điểm rèn luyện HKI ≥85, hoặc ≥80 + minh chứng chính trị-tư tưởng.</p>
+    <h3>Học tập</h3>
+    <p>- Điểm TB năm học 2023-2024 ≥ 3.2/4.0</p>
+    <h3>Thể lực</h3>
+    <p>- Điểm TB môn Thể dục khá trở lên, hoặc có chứng nhận thể thao, teambuilding.</p>
+    <h3>Tình nguyện</h3>
+    <p>- Có chứng nhận hoàn thành Chiến dịch TN, hoặc giấy khen TN.</p>
+    <h3>Hội nhập</h3>
+    <p>- Tham gia hoạt động giao lưu quốc tế, hoặc có chứng chỉ ngoại ngữ A2/B1, hoặc đạt giải thi ngoại ngữ.</p>`;
+}
+
+/* --- Chatbot --- */
+function addMsg(text, sender="bot"){
+  const chat = document.getElementById("chatWindow");
+  const div = document.createElement("div");
+  div.className = "chat-msg " + (sender==="user"?"chat-user":"chat-bot");
+  div.textContent = (sender==="user"?"👤 ":"🤖 ") + text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function botReply(msg){
+  const m = msg.toLowerCase();
+  if(m.includes("xin chào")) {
+    addMsg("Cảm ơn bạn đã đến với Website Tư vấn Sinh viên 5 tốt, bạn muốn hỏi gì về Danh hiệu Sinh viên 5 tốt?");
+  } else if(m.includes("là gì")) {
+    addMsg("Danh hiệu 'Sinh viên 5 tốt' là danh hiệu cao quý với 5 tiêu chí: Học tập, Đạo đức, Thể lực, Tình nguyện, Hội nhập.");
+  } else if(m.includes("tiêu chí nào")) {
+    addMsg("Bạn muốn hỏi về tiêu chí nào trước: Học tập, Đạo đức, Thể lực, Tình nguyện hay Hội nhập?");
+  } else if(m.includes("đạo đức")) {
+    addMsg("Đạo đức: Không vi phạm pháp luật; Điểm RL ≥85, hoặc ≥80 + minh chứng chính trị - tư tưởng.");
+  } else if(m.includes("học tập")) {
+    addMsg("Học tập: Điểm TB năm học 2023-2024 ≥ 3.2/4.0.");
+  } else if(m.includes("thể lực")) {
+    addMsg("Thể lực: Điểm TB môn TD khá trở lên hoặc có chứng nhận thể thao/teambuilding.");
+  } else if(m.includes("tình nguyện")) {
+    addMsg("Tình nguyện: Có chứng nhận hoàn thành Chiến dịch TN, hoặc giấy khen TN.");
+  } else if(m.includes("hội nhập")) {
+    addMsg("Hội nhập: Tham gia giao lưu quốc tế, hoặc chứng chỉ A2/B1, hoặc giải thi ngoại ngữ.");
+  } else if(m.includes("giấy")||m.includes("chứng nhận")||m.includes("bằng khen")) {
+    if(m.includes("tình nguyện")) addMsg("Minh chứng của bạn là hợp lệ cho tiêu chí Tình nguyện.");
+    else if(m.includes("thể lực")||m.includes("thể thao")) addMsg("Minh chứng của bạn là hợp lệ cho tiêu chí Thể lực.");
+    else if(m.includes("ngoại ngữ")||m.includes("hội nhập")) addMsg("Minh chứng của bạn là hợp lệ cho tiêu chí Hội nhập.");
+    else addMsg("Minh chứng của bạn chưa hợp lệ, bạn có minh chứng nào khác không?");
+  } else {
+    addMsg("Tôi sẽ cập nhật lại thông tin. Bạn có thể truy cập fanpage Đoàn Thanh niên – HSV Trường ĐHNN, ĐHĐN hoặc CLB SV5T để biết thêm chi tiết nhé!");
+  }
+}
+
+function sendMsg(){
+  const input = document.getElementById("chatInput");
+  const msg = input.value.trim();
+  if(!msg) return;
+  addMsg(msg,"user");
+  input.value="";
+  botReply(msg);
+}
+</script>
+</body>
+</html>
