@@ -99,3 +99,67 @@ ul, ol{ margin:8px 0 12px 20px; color:#16343a; line-height:1.6;}
   .banner img{ max-height:140px; }
   .main{ padding:12px; }
 }
+
+/* Bộ tiêu chí */
+.level-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.level-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.level-btn:hover { background: #0097a7; }
+.criteria-content {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  line-height: 1.6;
+}
+
+/* Chatbot */
+.chatbot-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+.chat-window {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  font-size: 14px;
+}
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+}
+.chat-input button {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.chat-input button:hover { background:#0097a7; }
+
+.chat-msg { margin:6px 0; }
+.chat-user { color:#003d80; font-weight:600; }
+.chat-bot { color:#00695c; }
