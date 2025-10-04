@@ -1,219 +1,112 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Website Tư vấn Sinh viên 5 tốt</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Website Tư vấn Sinh viên 5 tốt</h1>
-    <p>Đồng hành cùng bạn trên hành trình chinh phục danh hiệu SV5T</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <!-- dùng tệp logo.01 trong thư mục images -->
+        <img src="images/logo.01" alt="Logo Website Tư vấn SV5T" id="siteLogo" />
+      </div>
+      <div class="site-title">
+        <h1>Website Tư vấn Sinh viên 5 tốt</h1>
+        <p class="tagline">Đồng hành cùng sinh viên trên hành trình rèn luyện toàn diện</p>
+      </div>
+    </div>
+    <!-- banner -->
+    <div class="banner">
+      <img src="images/banner.01" alt="Banner Sinh viên 5 tốt" id="siteBanner" />
+    </div>
   </header>
 
   <!-- Navigation -->
-<nav>
-  <a href="#">Trang chủ</a>
-  <a href="#" id="criteriaBtn">Bộ tiêu chí</a>
-  <a href="#">Tự đánh giá</a>
-  <a href="#">Gương SV5T</a>
-  <a href="#">Liên hệ</a>
-</nav>
+  <nav class="main-nav" role="navigation" aria-label="Main menu">
+    <ul>
+      <li><a href="#" class="nav-link active" data-section="home">Trang chủ</a></li>
+      <li><a href="#" class="nav-link" data-section="consult">Tư vấn</a></li>
+      <li><a href="#" class="nav-link" data-section="criteria">Bộ tiêu chí</a></li>
+      <li><a href="#" class="nav-link" data-section="monitor">Tự theo dõi</a></li>
+      <li><a href="#" class="nav-link" data-section="selfcheck">Tự đánh giá</a></li>
+      <li><a href="#" class="nav-link" data-section="news">Tin tức</a></li>
+      <li><a href="#" class="nav-link" data-section="stories">Những câu chuyện</a></li>
+      <li><a href="#" class="nav-link" data-section="contact">Liên hệ</a></li>
+    </ul>
   </nav>
 
-  <!-- Banner -->
-  <div class="banner">
-    <img src="images/banner.jpg" alt="Ảnh bìa Sinh viên 5 tốt">
-  </div>
+  <!-- Main content -->
+  <main class="main" id="mainContent" tabindex="-1">
+    <!-- HOME (mặc định hiển thị) -->
+    <section id="home" class="section active-section" aria-labelledby="homeTitle">
+      <div class="container">
+        <h2 id="homeTitle">Trang chủ</h2>
 
-  <!-- Nội dung chính -->
-  <div class="container">
-    <h2>🌟 Giới thiệu Danh hiệu Sinh viên 5 tốt</h2>
-    <p>
-      Danh hiệu <strong>"Sinh viên 5 tốt"</strong> là một danh hiệu cao quý do Trung ương Hội Sinh viên Việt Nam phát động,
-      nhằm tôn vinh sự nỗ lực của sinh viên qua 5 tiêu chí: <b>Học tập tốt – Đạo đức tốt – Thể lực tốt – 
-      Tình nguyện tốt – Hội nhập tốt</b>. Phong trào này khuyến khích sinh viên phát triển toàn diện,
-      rèn luyện các kỹ năng cần thiết cho tương lai.
-    </p>
+        <p>
+          <strong>Danh hiệu "Sinh viên 5 tốt"</strong> là một danh hiệu cao quý do Trung ương Hội Sinh viên Việt Nam phát động,
+          nhằm tôn vinh sự nỗ lực của sinh viên qua 5 tiêu chí:
+          <em>Học tập tốt – Đạo đức tốt – Thể lực tốt – Tình nguyện tốt – Hội nhập tốt</em>.
+          Phong trào này khuyến khích sinh viên phát triển toàn diện, rèn luyện các kỹ năng cần thiết cho tương lai.
+        </p>
 
-    <h2>👤 Đối tượng tham gia đăng ký xét cấp Trường</h2>
-    <ul>
-      <li>Sinh viên từ khoá K21 đến khoá K24, hiện đang theo học tại Trường Đại học Ngoại ngữ, ĐHĐN.</li>
-      <li>Đáp ứng tiêu chuẩn SV5T: Học tập tốt, Đạo đức tốt, Thể lực tốt, Tình nguyện tốt, Hội nhập tốt.</li>
-    </ul>
+        <h3>Thông tin xét chọn cấp Trường (ĐHNN, ĐHĐN) — Năm học 2024 &ndash; 2025</h3>
 
-    <h2>⏳ Thời gian nhận hồ sơ</h2>
-    <ul>
-      <li>Đăng ký online: <b>03/9/2025 – 09/9/2025</b></li>
-      <li>Hạn cuối nộp báo cáo thành tích bản cứng: <b>12/9/2025</b></li>
-    </ul>
+        <p>
+          Các bạn sinh viên tham gia đăng ký xét chọn Danh hiệu Sinh viên 5 tốt cấp Trường Đại học Ngoại ngữ, ĐHĐN
+          năm học 2024 - 2025 lưu ý những thông tin sau để không bỏ lỡ cơ hội đạt được danh hiệu cao quý này nhé!
+        </p>
 
-    <h2>📌 Lưu ý khi nộp hồ sơ</h2>
-    <p>
-      - Hồ sơ online: File minh chứng phải là bản scan gốc, BCTT nộp đủ định dạng Word và PDF.<br>
-      - Hồ sơ bản cứng: Nộp bản in BCTT đã ký tên.
-    </p>
+        <h4>👤 Đối tượng tham gia đăng ký xét cấp Trường</h4>
+        <ul>
+          <li>Đối tượng: sinh viên từ khoá <strong>K21 đến K24</strong>, hiện đang theo học tại Trường Đại học Ngoại ngữ, Đại học Đà Nẵng.</li>
+          <li>Phải đáp ứng tiêu chuẩn Sinh viên 5 tốt cấp Trường ĐHNN, ĐHĐN: <strong>Học tập tốt, Đạo đức tốt, Thể lực tốt, Tình nguyện tốt, Hội nhập tốt</strong>.</li>
+        </ul>
 
-    <h2>🌟 Quy trình đăng ký xét chọn</h2>
-    <ol>
-      <li>Điền form đăng ký online.</li>
-      <li>Hoàn thiện & đăng tải hồ sơ bản mềm.</li>
-      <li>Theo dõi phản hồi từ ĐTN – HSV, nộp báo cáo thành tích bản cứng.</li>
-      <li>Bổ sung/chỉnh sửa hồ sơ sau phản hồi (nếu có).</li>
-      <li>HSV Nhà trường xét chọn và công bố kết quả.</li>
-    </ol>
-  </div>
+        <h4>⏳ Thời gian nhận hồ sơ đăng ký xét cấp Trường</h4>
+        <ul>
+          <li>Đăng ký online: <strong>03/9/2025 – 09/9/2025</strong>.</li>
+          <li>Hạn cuối nhận báo cáo thành tích bản cứng: <strong>12/9/2025</strong>.</li>
+        </ul>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 CLB Sinh viên 5 tốt - Đoàn Thanh niên & Hội Sinh viên Trường ĐHNN, ĐHĐN</p>
-  </footer>
+        <h4>📌 Lưu ý dành cho hồ sơ đăng ký</h4>
+        <ul>
+          <li><strong>Hồ sơ online (bản mềm):</strong> Các file minh chứng phải là file scan từ bản gốc (KHÔNG đăng tải bản photo). Báo cáo thành tích (BCTT) phải nộp 2 định dạng: Word và PDF (in BCTT, ký tên, scan và đăng tải lên thư mục cá nhân).</li>
+          <li><strong>Hồ sơ bản cứng:</strong> Chỉ nộp bản in BCTT đã có chữ ký của người kê khai.</li>
+        </ul>
 
-  <!-- Chatbot AI -->
-  <div class="chatbot">
-    <div class="chatbot-header" onclick="toggleChat()">💬 Tư vấn SV5T</div>
-    <div class="chatbot-body" id="chatbotBody">
-      <div class="chatbot-messages" id="messages"></div>
-      <input type="text" id="userInput" placeholder="Nhập câu hỏi..." onkeypress="handleKey(event)">
+        <h4>🛠 Quy trình đăng ký xét chọn Danh hiệu SV5T (cấp Trường)</h4>
+        <ol>
+          <li>Bước 1: Sinh viên điền form đăng ký online, thực hiện đầy đủ các yêu cầu trong form này (khuyến khích điền bằng máy tính để thuận tiện).</li>
+          <li>Bước 2: Hoàn thiện &amp; đăng tải thư mục hồ sơ bản mềm tương ứng với các cấp xét.</li>
+          <li>Bước 3: Theo dõi thông tin phản hồi về trạng thái hồ sơ bản mềm từ ĐTN - HSV Nhà trường; song song, hoàn thiện báo cáo thành tích bản cứng và nộp về Văn phòng ĐTN - HSV Nhà trường.</li>
+          <li>Bước 4: Bổ sung các thành tích bản mềm và chỉnh sửa BCTT bản cứng sau phản hồi (nếu có) trong thời gian quy định.</li>
+          <li>Bước 5: HSV Nhà trường tiến hành công tác xét chọn hồ sơ và công bố kết quả.</li>
+        </ol>
+
+        <p class="note">Mẹo: Hãy chuẩn bị hồ sơ sớm, scan tài liệu cẩn thận và giữ backup để dễ bổ sung khi Ban Tổ chức phản hồi.</p>
+      </div>
+    </section>
+
+    <!-- Placeholder sections (sẽ được mở khi click menu) -->
+    <section id="consult" class="section" aria-labelledby="consultTitle"><div class="container"><h2 id="consultTitle">Tư vấn</h2><p>Phần Tư vấn sẽ được cập nhật.</p></div></section>
+    <section id="criteria" class="section" aria-labelledby="criteriaTitle"><div class="container"><h2 id="criteriaTitle">Bộ tiêu chí</h2><p>Nhấn vào đây để xem Bộ tiêu chí (sẽ hiển thị modal hoặc nội dung chi tiết).</p></div></section>
+    <section id="monitor" class="section" aria-labelledby="monitorTitle"><div class="container"><h2 id="monitorTitle">Tự theo dõi</h2><p>Phần Tự theo dõi sẽ được phát triển.</p></div></section>
+    <section id="selfcheck" class="section" aria-labelledby="selfcheckTitle"><div class="container"><h2 id="selfcheckTitle">Tự đánh giá</h2><p>Phần Tự đánh giá sẽ bao gồm form và checklist.</p></div></section>
+    <section id="news" class="section" aria-labelledby="newsTitle"><div class="container"><h2 id="newsTitle">Tin tức</h2><p>Cập nhật tin tức liên quan.</p></div></section>
+    <section id="stories" class="section" aria-labelledby="storiesTitle"><div class="container"><h2 id="storiesTitle">Những câu chuyện</h2><p>Những câu chuyện truyền cảm hứng từ SV5T.</p></div></section>
+    <section id="contact" class="section" aria-labelledby="contactTitle"><div class="container"><h2 id="contactTitle">Liên hệ</h2><p>Thông tin liên hệ Đoàn – Hội sẽ được cập nhật tại đây.</p></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Website Tư vấn Sinh viên 5 tốt — Đoàn Thanh niên &amp; Hội Sinh viên Trường Đại học Ngoại ngữ, ĐHĐN</p>
     </div>
-  </div>
+  </footer>
 
   <script src="js/script.js"></script>
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Tư vấn Sinh viên 5 tốt</title>
-  <style>
-    body { font-family: Arial; margin:0; background:#f4f6f9; }
-    header { background:#0056b3; color:#fff; text-align:center; padding:20px; }
-    nav { background:#003d80; display:flex; justify-content:center; }
-    nav a { color:white; text-decoration:none; padding:15px 20px; }
-    nav a:hover { background:#004c99; }
-    .container { max-width:1000px; margin:20px auto; padding:20px; background:white; border-radius:8px; }
-    footer { background:#003d80; color:white; text-align:center; padding:10px; margin-top:20px; }
-    /* Chatbot */
-    .chatbot { position:fixed; bottom:20px; right:20px; width:280px; font-size:14px; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.3);}
-    .chatbot-header { background:#0056b3; color:white; padding:10px; cursor:pointer; text-align:center; }
-    .chatbot-body { display:none; flex-direction:column; background:white; height:350px;}
-    .chatbot-messages { flex:1; padding:10px; overflow-y:auto; font-size:13px; }
-    #userInput { border:none; border-top:1px solid #ddd; padding:10px; width:100%; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Website Tư vấn Sinh viên 5 tốt</h1>
-  </header>
-  <nav>
-    <a href="#">Trang chủ</a>
-    <a href="#">Bộ tiêu chí</a>
-    <a href="#">Đăng ký</a>
-  </nav>
-  <div class="container">
-    <h2>Giới thiệu</h2>
-    <p>Danh hiệu <b>Sinh viên 5 tốt</b> là danh hiệu cao quý do Trung ương Hội Sinh viên Việt Nam phát động...</p>
-  </div>
-  <footer>© 2025 CLB Sinh viên 5 tốt</footer>
-
-  <!-- Chatbot -->
-  <div class="chatbot">
-    <div class="chatbot-header" onclick="toggleChat()">💬 Tư vấn SV5T</div>
-    <div class="chatbot-body" id="chatbotBody">
-      <div class="chatbot-messages" id="messages"></div>
-      <input type="text" id="userInput" placeholder="Nhập câu hỏi..." onkeypress="handleKey(event)">
-    </div>
-  </div>
-
-  <script>
-    function toggleChat() {
-      const body = document.getElementById("chatbotBody");
-      body.style.display = body.style.display === "flex" ? "none" : "flex";
-    }
-    function handleKey(event) {
-      if (event.key === "Enter") sendMessage();
-    }
-    function sendMessage() {
-      const input = document.getElementById("userInput");
-      const msg = input.value.trim();
-      if (!msg) return;
-      const messages = document.getElementById("messages");
-      const userMsg = document.createElement("div");
-      userMsg.textContent = "👤: " + msg;
-      messages.appendChild(userMsg);
-      const botMsg = document.createElement("div");
-      botMsg.textContent = "🤖: Cảm ơn bạn! Về '" + msg + "', vui lòng liên hệ ĐTN-HSV để biết thêm chi tiết.";
-      messages.appendChild(botMsg);
-      input.value = "";
-      messages.scrollTop = messages.scrollHeight;
-    }
-  </script>
-</body>
-</html>
-
-<!-- Modal: Bộ tiêu chí -->
-<div id="criteriaModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="criteriaTitle">
-  <div class="modal-content" role="document">
-    <button class="modal-close" id="closeCriteria" aria-label="Đóng">&times;</button>
-    <h2 id="criteriaTitle">📌 Bộ tiêu chí Sinh viên 5 tốt - Cấp Trường ĐHNN, ĐHĐN</h2>
-
-    <div class="criteria-grid">
-      <!-- Đạo đức -->
-      <div class="criteria-card">
-        <h3>Đạo đức tốt</h3>
-        <ul>
-          <li>Không vi phạm pháp luật và các quy chế, nội quy của nhà trường, quy định của địa phương và cộng đồng.</li>
-          <li>Đạt thêm 01 trong các tiêu chí sau:
-            <ul>
-              <li>Điểm rèn luyện TB HKI 2023-2024 ≥ 85/100.</li>
-              <li>Điểm rèn luyện TB HKI 2023-2024 ≥ 80/100 và có minh chứng tham gia ≥1 hoạt động chính trị - tư tưởng.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Học tập -->
-      <div class="criteria-card">
-        <h3>Học tập tốt</h3>
-        <p>Điểm trung bình học tập năm học 2023-2024 đạt từ <strong>3.2/4.0</strong> trở lên.</p>
-      </div>
-
-      <!-- Thể lực -->
-      <div class="criteria-card">
-        <h3>Thể lực tốt</h3>
-        <ul>
-          <li>Điểm trung bình môn Thể dục 2023-2024 đạt loại khá trở lên.</li>
-          <li>Tham gia & có chứng nhận tại hoạt động thể thao cấp CLB/LCĐ/LCĐH trở lên.</li>
-          <li>Thành viên đội tuyển hoặc tham gia thi đấu cấp Trường trở lên.</li>
-          <li>Rèn luyện định kỳ tại CLB/Đội/Nhóm thể thao trong Trường.</li>
-          <li>Chứng nhận teambuilding do CLB/Đoàn–HSV tổ chức.</li>
-        </ul>
-      </div>
-
-      <!-- Tình nguyện -->
-      <div class="criteria-card">
-        <h3>Tình nguyện tốt</h3>
-        <ul>
-          <li>Chứng nhận hoàn thành Chiến dịch tình nguyện Hè hoặc Đông–Xuân.</li>
-          <li>Chứng nhận tham gia hoạt động tình nguyện tại chỗ do CLB/LCĐ/LCĐH hoặc đơn vị ngoài trường.</li>
-          <li>Giấy khen cấp Trường hoặc Đoàn Trường trở lên về hoạt động tình nguyện.</li>
-        </ul>
-      </div>
-
-      <!-- Hội nhập -->
-      <div class="criteria-card">
-        <h3>Hội nhập tốt</h3>
-        <ul>
-          <li>Tham gia ≥1 hoạt động hội nhập giao lưu quốc tế hoặc hội thảo cấp quốc gia/quốc tế.</li>
-          <li>Chứng chỉ ngoại ngữ: A2 (ngành chuyên ngữ) hoặc B1 tiếng Anh (ngành không chuyên ngữ) — hoặc tương đương theo Thông tư 05/2012/TT-BGDĐT.</li>
-          <li>Đạt giải cuộc thi ngoại ngữ cấp LCĐ/LCĐH/Khoa/CLB trở lên.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
