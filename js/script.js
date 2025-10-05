@@ -1,152 +1,105 @@
-// Navigation: bật/tắt section khi click menu
-document.addEventListener('DOMContentLoaded', function () {
-  const links = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('.section');
-
-  function showSection(id) {
-    // ẩn hết
-    sections.forEach(s => s.classList.remove('active-section'));
-    // active section
-    const sec = document.getElementById(id);
-    if (sec) sec.classList.add('active-section');
-    // active menu
-    links.forEach(a => a.classList.toggle('active', a.dataset.section === id));
-    // focus main
-    const main = document.getElementById('mainContent');
-    if (main) main.focus();
+/* --- Navigation --- */
+document.addEventListener('DOMContentLoaded', function(){
+  const navLinks = document.querySelectorAll('nav.main a.nav-link');
+  function setActive(id){
+    document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
+    const el = document.getElementById(id);
+    if(el) el.style.display = 'block';
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === id));
+    window.scrollTo({top:0, behavior:'smooth'});
   }
-
-  // bind click
-  links.forEach(link => {
-    link.addEventListener('click', function (e) {
+  navLinks.forEach(a=>{
+    a.addEventListener('click', function(e){
       e.preventDefault();
       const id = this.dataset.section;
-      showSection(id);
-      // scroll to top of main
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setActive(id);
     });
   });
-
-  // mở mặc định trang chủ
-  showSection('home');
+  setActive('home');
 });
 
-// --- Bộ tiêu chí ---
+/* --- Criteria data --- */
 const criteriaData = {
-  ufl: {
-    title: "Cấp Trường ĐH Ngoại ngữ, ĐHĐN",
-    content: `
-    <h3>Đạo đức</h3>
-    <ul>
-      <li>Không vi phạm pháp luật, nội quy trường, quy định địa phương.</li>
-      <li>Thêm 1 trong 2 điều kiện:
-        <ul>
-          <li>Điểm rèn luyện HKI 2023-2024 ≥ 85/100</li>
-          <li>Điểm rèn luyện HKI ≥ 80/100 + minh chứng tham gia hoạt động chính trị - tư tưởng</li>
-        </ul>
-      </li>
-    </ul>
-    <h3>Học tập</h3>
-    <p>Điểm TB năm học 2023-2024 ≥ 3.2/4.0</p>
-    <h3>Thể lực</h3>
-    <ul>
-      <li>Điểm TB môn Thể dục đạt loại khá trở lên</li>
-      <li>Hoặc có chứng nhận tham gia hoạt động thể thao/đội tuyển/teambuilding…</li>
-    </ul>
-    <h3>Tình nguyện</h3>
-    <ul>
-      <li>Giấy chứng nhận hoàn thành Chiến dịch TN Hè / Đông - Xuân</li>
-      <li>Hoặc giấy chứng nhận TN tại chỗ (CLB/LCĐ…)</li>
-      <li>Hoặc giấy khen cấp Trường/Đoàn Trường về TN</li>
-    </ul>
-    <h3>Hội nhập</h3>
-    <ul>
-      <li>Tham gia ≥1 hoạt động giao lưu quốc tế / hội thảo</li>
-      <li>Hoặc đạt chứng chỉ NN: A2 (chuyên ngữ) hoặc B1 Anh (không chuyên ngữ), tương đương</li>
-      <li>Hoặc đạt giải thi ngoại ngữ từ cấp LCĐ trở lên</li>
-    </ul>`
-  },
-  udn: { title:"Cấp ĐH Đà Nẵng", content:"<p>Tiêu chí cấp ĐH Đà Nẵng sẽ được cập nhật.</p>" },
-  danang: { title:"Cấp Thành phố Đà Nẵng", content:"<p>Tiêu chí cấp Thành phố sẽ được cập nhật.</p>" },
-  central: { title:"Cấp Trung ương", content:"<p>Tiêu chí cấp Trung ương sẽ được cập nhật.</p>" }
+  ufl:{ title:"Cấp Trường Đại học Ngoại ngữ, ĐHĐN", html:`…` },
+  udn:{title:"Cấp Đại học Đà Nẵng", html:"<p>Tiêu chí sẽ được cập nhật.</p>"},
+  danang:{title:"Cấp Thành phố Đà Nẵng", html:"<p>Tiêu chí sẽ được cập nhật.</p>"},
+  central:{title:"Cấp Trung ương", html:"<p>Tiêu chí sẽ được cập nhật.</p>"}
 };
-
-document.querySelectorAll(".level-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const lvl = btn.dataset.level;
+document.querySelectorAll('.level-btn').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    const lvl = this.dataset.level;
     const data = criteriaData[lvl];
-    document.getElementById("criteriaContent").innerHTML =
-      `<h3>${data.title}</h3>${data.content}`;
+    document.getElementById('criteriaContent').innerHTML = `<h3>${data.title}</h3>` + data.html;
   });
 });
 
-// --- Chatbot mô phỏng ---
-const chatWindow = document.getElementById("chatWindow");
-const chatInput = document.getElementById("chatInput");
-const sendBtn = document.getElementById("sendBtn");
-
-function addMsg(text, sender="bot") {
-  const div = document.createElement("div");
-  div.className = "chat-msg " + (sender==="user"?"chat-user":"chat-bot");
-  div.textContent = (sender==="user"?"👤 ":"🤖 ") + text;
-  chatWindow.appendChild(div);
-  chatWindow.scrollTop = chatWindow.scrollHeight;
-}
-
-// kịch bản tư vấn
-function botReply(msg) {
-  msg = msg.toLowerCase();
-
-  if (msg.includes("xin chào")) {
-    addMsg("Cảm ơn bạn đã đến với Website Tư vấn Sinh viên 5 tốt, bạn muốn hỏi gì về Danh hiệu Sinh viên 5 tốt?");
-  } 
-  else if (msg.includes("là gì")) {
-    addMsg("Danh hiệu 'Sinh viên 5 tốt' là danh hiệu cao quý do Trung ương HSV VN phát động, với 5 tiêu chí: Học tập tốt – Đạo đức tốt – Thể lực tốt – Tình nguyện tốt – Hội nhập tốt.");
-  } 
-  else if (msg.includes("tiêu chí nào")) {
-    addMsg("Bạn muốn hỏi về tiêu chí nào trước: Học tập, Đạo đức, Thể lực, Tình nguyện hay Hội nhập?");
-  } 
-  else if (msg.includes("đạo đức")) {
-    addMsg("Đạo đức: Không vi phạm pháp luật; Điểm RL HKI 2023-2024 ≥85 hoặc ≥80 kèm minh chứng chính trị - tư tưởng.");
-  } 
-  else if (msg.includes("học tập")) {
-    addMsg("Học tập: Điểm trung bình năm học 2023-2024 ≥ 3.2/4.0.");
-  } 
-  else if (msg.includes("thể lực")) {
-    addMsg("Thể lực: Đạt TB môn TD khá trở lên, hoặc có chứng nhận tham gia hoạt động/thi đấu thể thao/teambuilding.");
-  } 
-  else if (msg.includes("tình nguyện")) {
-    addMsg("Tình nguyện: Có chứng nhận hoàn thành chiến dịch TN Hè/Đông-Xuân, hoặc giấy chứng nhận TN tại chỗ, hoặc giấy khen cấp Trường/Đoàn Trường.");
-  } 
-  else if (msg.includes("hội nhập")) {
-    addMsg("Hội nhập: Tham gia hoạt động giao lưu quốc tế/hội thảo; hoặc đạt chứng chỉ NN A2/B1 hoặc tương đương; hoặc đạt giải thi ngoại ngữ.");
+/* --- News detail --- */
+function openNews(id){
+  const detail = document.getElementById('newsDetail');
+  if(id===1){
+    detail.innerHTML = `<h3>Chúc mừng SV đạt SV5T cấp Trung ương</h3><p>Nội dung chi tiết ...</p>`;
+  } else {
+    detail.innerHTML = `<h3>Những thành tích tiêu biểu</h3><p>Nội dung chi tiết ...</p>`;
   }
-  else if (msg.includes("giấy") || msg.includes("chứng nhận") || msg.includes("bằng khen")) {
-    // phán đoán minh chứng
-    if (msg.includes("tình nguyện")) {
-      addMsg("Minh chứng của bạn là hợp lệ cho tiêu chí Tình nguyện.");
-    } else if (msg.includes("thể thao") || msg.includes("thể lực")) {
-      addMsg("Minh chứng của bạn là hợp lệ cho tiêu chí Thể lực.");
-    } else if (msg.includes("ngoại ngữ") || msg.includes("hội nhập")) {
-      addMsg("Minh chứng của bạn là hợp lệ cho tiêu chí Hội nhập.");
-    } else {
-      addMsg("Minh chứng của bạn chưa hợp lệ, bạn có minh chứng nào khác không?");
+  detail.style.display = 'block';
+  detail.scrollIntoView({behavior:'smooth'});
+}
+window.openNews = openNews;
+
+/* --- Chatbot --- */
+(function(){
+  const chatWindow = document.getElementById('chatWindow');
+  const chatInput = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('sendBtn');
+  let awaitingCriterionChoice = false;
+
+  function addMsg(text, sender='bot'){
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + (sender==='user' ? 'chat-user' : 'chat-bot');
+    div.textContent = (sender==='user' ? '👤 ' : '🤖 ') + text;
+    chatWindow.appendChild(div);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+  function normalize(s){ return s.toLowerCase().trim(); }
+
+  function botReply(raw){
+    const msg = normalize(raw);
+    if(msg.includes('xin chào sv5t')){
+      addMsg('Cảm ơn bạn đã đến với Website Tư vấn Sinh viên 5 tốt, bạn muốn hỏi gì về Danh hiệu Sinh viên 5 tốt?');
+      awaitingCriterionChoice = false; return;
     }
+    if(msg.includes('là gì')){
+      addMsg('Danh hiệu "Sinh viên 5 tốt" là một danh hiệu cao quý...');
+      return;
+    }
+    if(msg.includes('xét') && msg.includes('cấp trường')){
+      addMsg('Bạn muốn hỏi về tiêu chí nào: Học tập, Đạo đức, Thể lực, Tình nguyện, Hội nhập?');
+      awaitingCriterionChoice = true; return;
+    }
+    if(awaitingCriterionChoice){
+      if(msg.includes('đạo')){ addMsg('Đạo đức: Không vi phạm + điểm rèn luyện ≥85 hoặc ≥80 + HĐ chính trị.'); return; }
+      if(msg.includes('học')){ addMsg('Học tập: GPA ≥3.2/4.0.'); return; }
+      if(msg.includes('thể')){ addMsg('Thể lực: TB môn Thể dục khá trở lên hoặc chứng nhận thể thao.'); return; }
+      if(msg.includes('tình')){ addMsg('Tình nguyện: Có giấy chứng nhận chiến dịch tình nguyện.'); return; }
+      if(msg.includes('hội')){ addMsg('Hội nhập: Tham gia giao lưu quốc tế hoặc có chứng chỉ ngoại ngữ A2/B1.'); return; }
+    }
+    if(msg.includes('giấy') || msg.includes('chứng nhận')){
+      if(msg.includes('tình nguyện')){ addMsg('Minh chứng hợp lệ cho tiêu chí Tình nguyện.'); return; }
+      if(msg.includes('thể')){ addMsg('Minh chứng hợp lệ cho tiêu chí Thể lực.'); return; }
+      if(msg.includes('ngoại ngữ') || msg.includes('ielts')){ addMsg('Minh chứng hợp lệ cho tiêu chí Hội nhập.'); return; }
+      addMsg('Minh chứng chưa hợp lệ, bạn có minh chứng khác không?'); return;
+    }
+    addMsg('Tôi sẽ cập nhật lại thông tin. Bạn có thể truy cập fanpage để biết thêm chi tiết nhé!');
   }
-  else {
-    addMsg("Tôi sẽ cập nhật lại thông tin. Bạn có thể truy cập fanpage “Đoàn TN – HSV Trường ĐHNN, ĐHĐN” hoặc CLB SV5T để biết thêm chi tiết nhé!");
-  }
-}
 
-// gửi tin nhắn
-function sendMsg() {
-  const msg = chatInput.value.trim();
-  if (!msg) return;
-  addMsg(msg, "user");
-  chatInput.value = "";
-  botReply(msg);
-}
-sendBtn.addEventListener("click", sendMsg);
-chatInput.addEventListener("keypress", e => {
-  if (e.key==="Enter") sendMsg();
-});
+  sendBtn.addEventListener('click', ()=>{
+    const v = chatInput.value.trim();
+    if(!v) return;
+    addMsg(v, 'user');
+    chatInput.value = '';
+    botReply(v);
+  });
+  chatInput.addEventListener('keypress', e=>{
+    if(e.key==='Enter'){ sendBtn.click(); }
+  });
+})();
