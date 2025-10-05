@@ -20,18 +20,56 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* --- Criteria data --- */
 const criteriaData = {
-  ufl:{ title:"Cấp Trường Đại học Ngoại ngữ, ĐHĐN", html:`…` },
+  ufl:{
+    title:"Cấp Trường Đại học Ngoại ngữ, ĐHĐN",
+    html:`
+      <h4>Đạo đức</h4>
+      <ul>
+        <li>Không vi phạm pháp luật và các quy chế, nội quy của nhà trường, quy định của địa phương và cộng đồng.</li>
+        <li>Đạt thêm 01 trong các tiêu chí sau:
+          <ul>
+            <li>Điểm rèn luyện trung bình HKI 2023-2024 đạt từ 85 điểm trở lên (thang 100 theo quy chế Bộ GD&ĐT).</li>
+            <li>Điểm rèn luyện trung bình HKI 2023-2024 đạt từ 80 điểm trở lên (áp dụng cho sinh viên có minh chứng tham gia ít nhất 01 hoạt động chính trị - tư tưởng: học tập, sinh hoạt, thi tìm hiểu nghị quyết, tư tưởng Hồ Chí Minh).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Học tập</h4>
+      <p>Điểm trung bình học tập năm học 2023-2024 đạt từ 3.2/4.0 trở lên.</p>
+
+      <h4>Thể lực</h4>
+      <p>Đạt 01 trong các tiêu chí sau:</p>
+      <ul>
+        <li>Điểm trung bình môn Thể dục trong năm học 2023-2024 đạt loại khá trở lên.</li>
+        <li>Tham gia và có giấy chứng nhận phong trào/hoạt động thể thao cấp CLB, Liên Chi hội, Liên Chi đoàn trở lên.</li>
+        <li>Là thành viên đội tuyển hoặc cá nhân tham gia thi đấu hội thao / giải thể thao cấp Trường trở lên.</li>
+        <li>Tham gia rèn luyện thể thao định kỳ tại CLB/Đội/Nhóm trong Trường.</li>
+        <li>Tham gia và có chứng nhận chương trình teambuilding do CLB hoặc Đoàn – Hội Nhà trường tổ chức.</li>
+      </ul>
+
+      <h4>Tình nguyện</h4>
+      <p>Đạt 01 trong các tiêu chuẩn sau:</p>
+      <ul>
+        <li>Có chứng nhận hoàn thành một trong các chiến dịch: Tình nguyện hè, Tình nguyện Đông – Xuân.</li>
+        <li>Đạt 01 chứng nhận tham gia hoạt động tình nguyện tại chỗ (CLB, Liên Chi hội, Liên Chi đoàn trở lên hoặc đơn vị ngoài Trường).</li>
+        <li>Được giấy khen cấp Trường, Đoàn Trường trở lên về hoạt động tình nguyện.</li>
+      </ul>
+
+      <h4>Hội nhập</h4>
+      <p>Đạt 01 trong các tiêu chí sau:</p>
+      <ul>
+        <li>Tham gia ít nhất 01 hoạt động hội nhập giao lưu quốc tế, hội thảo quốc gia/quốc tế.</li>
+        <li>Đạt chứng chỉ ngoại ngữ 2 trình độ A2 hoặc tương đương (đối với SV chuyên ngữ). 
+            Đạt chứng chỉ ngoại ngữ B1 tiếng Anh hoặc tương đương (đối với SV không chuyên ngữ). 
+            (Áp dụng quy đổi theo Thông tư 05/2012/TT-BGDĐT).</li>
+        <li>Tham gia và đạt giải trong các cuộc thi ngoại ngữ cấp Liên Chi Đoàn, Liên Chi hội, Khoa, CLB trở lên.</li>
+      </ul>
+    `
+  },
   udn:{title:"Cấp Đại học Đà Nẵng", html:"<p>Tiêu chí sẽ được cập nhật.</p>"},
   danang:{title:"Cấp Thành phố Đà Nẵng", html:"<p>Tiêu chí sẽ được cập nhật.</p>"},
   central:{title:"Cấp Trung ương", html:"<p>Tiêu chí sẽ được cập nhật.</p>"}
 };
-document.querySelectorAll('.level-btn').forEach(btn=>{
-  btn.addEventListener('click', function(){
-    const lvl = this.dataset.level;
-    const data = criteriaData[lvl];
-    document.getElementById('criteriaContent').innerHTML = `<h3>${data.title}</h3>` + data.html;
-  });
-});
 
 /* --- News detail --- */
 function openNews(id){
