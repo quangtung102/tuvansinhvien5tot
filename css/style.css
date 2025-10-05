@@ -54,3 +54,26 @@ ul,ol{line-height:1.6}
 .news-detail{display:none;margin-top:12px;background:#fff;padding:14px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
 /* responsive */
 @media (max-width:760px){ .site-title h1{font-size:16px} .banner img{height:auto} nav.main{gap:6px} }
+
+.logo {
+  height: 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00bcd4; /* màu xanh cyan HSV */
+  padding: 10px 20px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
